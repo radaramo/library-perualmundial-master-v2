@@ -38,35 +38,35 @@
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/content_margin"
+                android:layout_weight="1"
+                android:orientation="horizontal"
                 android:paddingBottom="@dimen/content_margin"
-                android:paddingLeft="@dimen/content_margin"
-                android:paddingStart="@dimen/content_margin"
-                android:paddingRight="@dimen/content_padding"
                 android:paddingEnd="@dimen/content_padding"
-                android:orientation="vertical">
+                android:paddingLeft="@dimen/content_margin"
+                android:paddingRight="@dimen/content_padding"
+                android:paddingStart="@dimen/content_margin"
+                android:paddingTop="@dimen/content_margin">
 
                 <TextView
                     android:id="@+id/name"
+                    fontPath="fonts/Font-Medium.ttf"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#FFFFFF"
-                    android:textSize="@dimen/text_content"
-                    android:maxLines="1"
                     android:ellipsize="end"
-                    fontPath="fonts/Font-Medium.ttf"/>
+                    android:maxLines="1"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/text_content" />
 
                 <TextView
                     android:id="@+id/author"
+                    fontPath="fonts/Font-Regular.ttf"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#CCFFFFFF"
-                    android:textSize="@dimen/text_content"
-                    android:maxLines="1"
                     android:ellipsize="end"
-                    fontPath="fonts/Font-Regular.ttf"/>
+                    android:maxLines="1"
+                    android:textColor="#CCFFFFFF"
+                    android:textSize="@dimen/text_content" />
             </LinearLayout>
 
             <ImageView
