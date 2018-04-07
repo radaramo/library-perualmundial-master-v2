@@ -52,6 +52,7 @@
             android:theme="@style/WallpaperTheme"
             android:exported="true"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape"
             android:resizeableActivity="false"/>
 
         <service android:name=".services.WallpaperBoardService"
