@@ -62,7 +62,7 @@ public class WallpaperBoardBrowserActivity extends AppCompatActivity {
         ColorHelper.setupStatusBarIconColor(this, ColorHelper.isLightColor(color));
 
         WindowHelper.resetNavigationBarTranslucent(this,
-                WindowHelper.NavigationBarTranslucent.PORTRAIT_ONLY);
+                WindowHelper.NavigationBarTranslucent.LANDSCAPE_ONLY);
 
         SoftKeyboardHelper softKeyboardHelper = new SoftKeyboardHelper(this,
                 findViewById(R.id.container));
