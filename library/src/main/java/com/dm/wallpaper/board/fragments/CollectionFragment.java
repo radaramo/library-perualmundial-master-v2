@@ -41,9 +41,6 @@ import com.dm.wallpaper.board.items.PopupItem;
 import com.dm.wallpaper.board.preferences.Preferences;
 import com.dm.wallpaper.board.utils.Extras;
 import com.dm.wallpaper.board.utils.Popup;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,7 +83,7 @@ public class CollectionFragment extends Fragment {
     @BindView(R2.id.pager)
     ViewPager mPager;
 	
-	private InterstitialAd mInterstitialAd;
+	//private InterstitialAd mInterstitialAd;
 
     private CollectionPagerAdapter mAdapter;
 
@@ -100,16 +97,16 @@ public class CollectionFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_collection, container, false);
         ButterKnife.bind(this, view);
 		
-		mInterstitialAd = new InterstitialAd(getActivity());
-        mInterstitialAd.setAdUnitId(getString(R.string.intersticial1));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+	//	mInterstitialAd = new InterstitialAd(getActivity());
+     //   mInterstitialAd.setAdUnitId(getString(R.string.intersticial1));
+     //   mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
-        mInterstitialAd.setAdListener(new AdListener() {
+       /* mInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {
                 displayInterstitial();
             }
-        });
+        }); */
 		
         initViewPager();
         mTab.setupWithViewPager(mPager);
@@ -144,11 +141,11 @@ public class CollectionFragment extends Fragment {
         return view;
     }
 
-	public void displayInterstitial() {
+ /*	public void displayInterstitial() {
         if (mInterstitialAd.isLoaded()) {
             mInterstitialAd.show();
         }
-    }
+    } */
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

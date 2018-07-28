@@ -23,6 +23,9 @@ import com.dm.wallpaper.board.applications.WallpaperBoardConfiguration;
 import com.dm.wallpaper.board.databases.Database;
 import com.dm.wallpaper.board.items.Category;
 import com.danimahardhika.android.helpers.core.utils.LogUtil;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,12 +66,34 @@ public class CategoriesFragment extends Fragment {
     private CategoriesAdapter mAdapter;
     private AsyncTask mAsyncTask;
 
+    private InterstitialAd mInterstitialAd;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_categories, container, false);
         ButterKnife.bind(this, view);
+
+
+          mInterstitialAd = new InterstitialAd(getActivity());
+          mInterstitialAd.setAdUnitId(getString(R.string.intersticial1));
+          mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+          mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                displayInterstitial();
+            }
+        });
+
         return view;
+    }
+
+
+ 	public void displayInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
     }
 
     @Override
